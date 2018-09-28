@@ -1,0 +1,14 @@
+﻿  _bz2module.c
+  blocksort.c
+  bzlib.c
+f:\workspace\codereading\python-3.6.6\externals\bzip2-1.0.6\bzlib.c(997): warning C4267: “=”: 从“size_t”转换到“Int32”，可能丢失数据
+f:\workspace\codereading\python-3.6.6\externals\bzip2-1.0.6\bzlib.c(1056): warning C4267: “=”: 从“size_t”转换到“Int32”，可能丢失数据
+f:\workspace\codereading\python-3.6.6\externals\bzip2-1.0.6\bzlib.c(1191): warning C4267: “=”: 从“size_t”转换到“Int32”，可能丢失数据
+  compress.c
+f:\workspace\codereading\python-3.6.6\externals\bzip2-1.0.6\compress.c(205): warning C4244: “=”: 从“__int64”转换到“Int32”，可能丢失数据
+  crctable.c
+  decompress.c
+  huffman.c
+  randtable.c
+  正在生成代码...
+LINK : fatal error LNK1104: 无法打开文件“F:\Workspace\CodeReading\Python-3.6.6\PCBuild\amd64\python36_d.lib”

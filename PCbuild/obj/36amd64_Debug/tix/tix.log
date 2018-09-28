@@ -1,0 +1,25 @@
+﻿  	md Debug_AMD64_VC13
+  	cl.exe -DWIN32 -D_WIN32 -D_MT -DSTDC_HEADERS -D_DLL -c -W3 -nologo -MD -FpDebug_AMD64_VC13\  -Od -Zi -I"c:\Program Files\Microsoft Visual Studio\VC98\include"  -I..\win -I..\generic  -IF:\Workspace\CodeReading\Python-3.6.6\externals\tk-8.6.6.0\generic -IF:\Workspace\CodeReading\Python-3.6.6\externals\tk-8.6.6.0\win -IF:\Workspace\CodeReading\Python-3.6.6\externals\tk-8.6.6.0\xlib  -IF:\Workspace\CodeReading\Python-3.6.6\externals\tcl-core-8.6.6.0\generic -IF:\Workspace\CodeReading\Python-3.6.6\externals\tcl-core-8.6.6.0\win -D__WIN32__  -D_CRT_SECURE_NO_WARNINGS -DUSE_TCL_STUBS=1 -DUSE_TK_STUBS=1 -DBUILD_tix -FoDebug_AMD64_VC13\tixClass.obj ..\generic\tixClass.c
+  tixClass.c
+D:\Windows Kits\10\Include\10.0.17134.0\um\winnt.h(20154): error C2059: 语法错误:“常数”
+D:\Windows Kits\10\Include\10.0.17134.0\um\winnt.h(20166): error C2059: 语法错误:“}”
+D:\Windows Kits\10\Include\10.0.17134.0\um\winnt.h(20167): error C2059: 语法错误:“}”
+D:\Windows Kits\10\Include\10.0.17134.0\um\winnt.h(20168): error C2143: 语法错误: 缺少“{”(在“*”的前面)
+D:\Windows Kits\10\Include\10.0.17134.0\um\winnt.h(20176): error C2061: 语法错误: 标识符“IMAGE_POLICY_ENTRY”
+D:\Windows Kits\10\Include\10.0.17134.0\um\winnt.h(20177): error C2059: 语法错误:“}”
+D:\Windows Kits\10\Include\10.0.17134.0\um\winnt.h(20178): error C2143: 语法错误: 缺少“{”(在“*”的前面)
+D:\Windows Kits\10\Include\10.0.17134.0\um\processthreadsapi.h(1036): error C2059: 语法错误:“常数”
+D:\Windows Kits\10\Include\10.0.17134.0\um\processthreadsapi.h(1038): error C2059: 语法错误:“}”
+D:\Windows Kits\10\Include\10.0.17134.0\um\processthreadsapi.h(1154): error C2059: 语法错误:“常数”
+D:\Windows Kits\10\Include\10.0.17134.0\um\processthreadsapi.h(1156): error C2059: 语法错误:“}”
+..\generic\tixClass.c(861): warning C4267: “=”: 从“size_t”转换到“unsigned int”，可能丢失数据
+NMAKE : fatal error U1077: “"D:\Prosoft\Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX86\x64\cl.exe"”: 返回代码“0x2”
+  Stop.
+D:\Prosoft\Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.MakeFile.Targets(51,5): error MSB3073: 命令“setlocal
+D:\Prosoft\Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.MakeFile.Targets(51,5): error MSB3073: if not exist "F:\Workspace\CodeReading\Python-3.6.6\externals\tcltk64\lib\tix8.4.3\tix84g.dll" goto build
+D:\Prosoft\Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.MakeFile.Targets(51,5): error MSB3073: goto :eof
+D:\Prosoft\Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.MakeFile.Targets(51,5): error MSB3073: :build
+D:\Prosoft\Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.MakeFile.Targets(51,5): error MSB3073: set VCINSTALLDIR=D:\Prosoft\Visual Studio\2017\Community\VC\
+D:\Prosoft\Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.MakeFile.Targets(51,5): error MSB3073: cd /D "F:\Workspace\CodeReading\Python-3.6.6\externals\tix-8.4.3.6\win"
+D:\Prosoft\Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.MakeFile.Targets(51,5): error MSB3073: nmake /nologo -f makefile.vc MACHINE=AMD64 DEBUG=1 NODEBUG=0 TCL_DBGX=g TK_DBGX=g TCL_MAJOR=8 TCL_MINOR=6 TCL_PATCH=6 BUILDDIRTOP="Debug_AMD64_VC13" TCL_DIR="F:\Workspace\CodeReading\Python-3.6.6\externals\tcl-core-8.6.6.0" TK_DIR="F:\Workspace\CodeReading\Python-3.6.6\externals\tk-8.6.6.0" INSTALL_DIR="F:\Workspace\CodeReading\Python-3.6.6\externals\tcltk64" all install
+D:\Prosoft\Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.MakeFile.Targets(51,5): error MSB3073: ”已退出，代码为 2。

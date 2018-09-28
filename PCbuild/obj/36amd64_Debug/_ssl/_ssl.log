@@ -1,0 +1,7 @@
+﻿  _ssl.c
+f:\workspace\codereading\python-3.6.6\modules\_ssl.c(1696): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+f:\workspace\codereading\python-3.6.6\modules\_ssl.c(3102): warning C4244: “=”: 从“Py_ssize_t”转换到“int”，可能丢失数据
+f:\workspace\codereading\python-3.6.6\modules\_ssl.c(4231): warning C4267: “函数”: 从“size_t”转换到“long”，可能丢失数据
+f:\workspace\codereading\python-3.6.6\modules\_ssl.c(4267): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+f:\workspace\codereading\python-3.6.6\modules\_ssl.c(4313): warning C4244: “函数”: 从“Py_ssize_t”转换到“int”，可能丢失数据
+LINK : fatal error LNK1104: 无法打开文件“F:\Workspace\CodeReading\Python-3.6.6\PCBuild\amd64\python36_d.lib”

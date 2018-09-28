@@ -1,0 +1,13 @@
+﻿  Performing Custom Build Tools
+   Assembling: F:\Workspace\CodeReading\Python-3.6.6\Modules\_ctypes\libffi_msvc\win64.asm
+  _ctypes.c
+  callbacks.c
+  callproc.c
+  cfield.c
+  ffi.c
+  malloc_closure.c
+  prep_cif.c
+f:\workspace\codereading\python-3.6.6\modules\_ctypes\libffi_msvc\prep_cif.c(170): warning C4267: “+=”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  stgdict.c
+  正在生成代码...
+LINK : fatal error LNK1104: 无法打开文件“F:\Workspace\CodeReading\Python-3.6.6\PCBuild\amd64\python36_d.lib”

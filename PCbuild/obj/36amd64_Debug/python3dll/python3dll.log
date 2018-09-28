@@ -1,0 +1,7 @@
+﻿  python3dll.c
+  Updating python3_d.def
+  Updating python3stub.def
+  Rebuilding python3_dstub.lib
+    正在创建库 F:\Workspace\CodeReading\Python-3.6.6\PCBuild\amd64\python3_dstub.lib 和对象 F:\Workspace\CodeReading\Python-3.6.6\PCBuild\amd64\python3_dstub.exp
+    正在创建库 F:\Workspace\CodeReading\Python-3.6.6\PCBuild\amd64\python3_d.lib 和对象 F:\Workspace\CodeReading\Python-3.6.6\PCBuild\amd64\python3_d.exp
+  python3dll.vcxproj -> F:\Workspace\CodeReading\Python-3.6.6\PCBuild\amd64\python3_d.dll

@@ -1,0 +1,19 @@
+﻿  Performing Custom Build Tools
+   Assembling: F:\Workspace\CodeReading\Python-3.6.6\Modules\_decimal\libmpdec\vcdiv64.asm
+  _decimal.c
+  basearith.c
+  constants.c
+  context.c
+  convolute.c
+  crt.c
+  difradix2.c
+  fnt.c
+  fourstep.c
+  io.c
+  memory.c
+  mpdecimal.c
+  numbertheory.c
+  sixstep.c
+  transpose.c
+  正在生成代码...
+LINK : fatal error LNK1104: 无法打开文件“F:\Workspace\CodeReading\Python-3.6.6\PCBuild\amd64\python36_d.lib”

@@ -1,0 +1,9 @@
+﻿  _msi.c
+f:\workspace\codereading\python-3.6.6\pc\_msi.c(998): warning C4311: “类型强制转换”: 从“LPCTSTR”到“int”的指针截断
+f:\workspace\codereading\python-3.6.6\pc\_msi.c(1000): warning C4312: “类型强制转换”: 从“int”转换到更大的“LPCSTR”
+f:\workspace\codereading\python-3.6.6\pc\_msi.c(1066): warning C4311: “类型强制转换”: 从“LPCTSTR”到“long”的指针截断
+f:\workspace\codereading\python-3.6.6\pc\_msi.c(1067): warning C4311: “类型强制转换”: 从“LPCTSTR”到“long”的指针截断
+f:\workspace\codereading\python-3.6.6\pc\_msi.c(1068): warning C4311: “类型强制转换”: 从“LPCTSTR”到“long”的指针截断
+f:\workspace\codereading\python-3.6.6\pc\_msi.c(1069): warning C4311: “类型强制转换”: 从“LPCTSTR”到“long”的指针截断
+f:\workspace\codereading\python-3.6.6\pc\_msi.c(1070): warning C4311: “类型强制转换”: 从“LPCTSTR”到“long”的指针截断
+LINK : fatal error LNK1104: 无法打开文件“F:\Workspace\CodeReading\Python-3.6.6\PCBuild\amd64\python36_d.lib”
