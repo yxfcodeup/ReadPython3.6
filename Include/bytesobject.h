@@ -31,13 +31,14 @@ functions should be applied to nil objects.
 typedef struct {
     PyObject_VAR_HEAD
     Py_hash_t ob_shash;
-    char ob_sval[1];
+    char ob_sval[1];        // char ob_sval[1] = '\0' ;
 
     /* Invariants:
      *     ob_sval contains space for 'ob_size+1' elements.
      *     ob_sval[ob_size] == 0.
      *     ob_shash is the hash of the string or -1 if not computed yet.
      */
+    /* ob_shash的存在使得多个变量引用到同一个PyObject时，导致深拷贝浅拷贝的问题 */
 } PyBytesObject;
 #endif
 

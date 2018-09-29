@@ -80,6 +80,7 @@ whose size is determined when the object is allocated.
 #endif
 
 /* PyObject_HEAD defines the initial segment of every PyObject. */
+/* 在Python中，一切皆对象。所有的对象都会有PyObject_HEAD*/
 #define PyObject_HEAD                   PyObject ob_base;
 
 #define PyObject_HEAD_INIT(type)        \
@@ -103,22 +104,24 @@ whose size is determined when the object is allocated.
  * by hand.  Similarly every pointer to a variable-size Python object can,
  * in addition, be cast to PyVarObject*.
  */
+/*
+ * ob_refcnt 是对象的引用计数
+ */
 typedef struct _object {
     _PyObject_HEAD_EXTRA
     Py_ssize_t ob_refcnt;
     struct _typeobject *ob_type;
 } PyObject;
-
 /*
-// 替换后
 typedef struct _object {
     struct _object *_ob_next;
     struct _object *_ob_prev;
-    Py_ssize_t ob_refcnt;
+    __int64 ob_refcnt;
     struct _typeobject *ob_type;
 } PyObject;
 */
 
+/* 变长对象 */
 typedef struct {
     PyObject ob_base;
     Py_ssize_t ob_size; /* Number of items in variable part */
