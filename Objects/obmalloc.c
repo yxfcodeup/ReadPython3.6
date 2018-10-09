@@ -474,6 +474,9 @@ void *
 PyObject_Malloc(size_t size)
 {
     /* see PyMem_RawMalloc() */
+    /*
+        单次申请内存为256MB(64位系统)
+    */
     if (size > (size_t)PY_SSIZE_T_MAX)
         return NULL;
     return _PyObject.malloc(_PyObject.ctx, size);

@@ -106,6 +106,10 @@ typedef int Py_ssize_clean_t;
 #define PY_SIZE_MAX SIZE_MAX
 
 /* Largest positive value of type Py_ssize_t. */
+/*
+    size_t: unsigned int -> 4字节8位，可表达位数2^32=4294967296
+    ((size_t)-1) >> 1: 2147483647
+*/
 #define PY_SSIZE_T_MAX ((Py_ssize_t)(((size_t)-1)>>1))
 /* Smallest negative value of type Py_ssize_t. */
 #define PY_SSIZE_T_MIN (-PY_SSIZE_T_MAX-1)

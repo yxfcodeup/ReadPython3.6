@@ -83,7 +83,12 @@ typedef long stwodigits; /* signed variant of twodigits */
 */
 
 struct _longobject {
+    // 此处说明long int是变长对象
+    //#define PyObject_VAR_HEAD      PyVarObject ob_base;
 	PyObject_VAR_HEAD
+    // 可以申请30bytes或者15bytes大小的整型，通过pyport.h设置
+    //typedef uint32_t digit;   
+    //typedef unsigned short digit;
 	digit ob_digit[1];
 };
 

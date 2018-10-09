@@ -121,7 +121,7 @@ typedef struct _object {
 } PyObject;
 */
 
-/* 变长对象 */
+/* 可变对象 */
 typedef struct {
     PyObject ob_base;
     Py_ssize_t ob_size; /* Number of items in variable part */

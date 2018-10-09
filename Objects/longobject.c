@@ -28,6 +28,9 @@
    The integers that are preallocated are those in the range
    -NSMALLNEGINTS (inclusive) to NSMALLPOSINTS (not inclusive).
 */
+/*
+    小整型对象池，范围是-5 <= small int <= 256，即 5+257= 262个
+*/
 static PyLongObject small_ints[NSMALLNEGINTS + NSMALLPOSINTS];
 #ifdef COUNT_ALLOCS
 Py_ssize_t quick_int_allocs, quick_neg_int_allocs;
@@ -36,6 +39,7 @@ Py_ssize_t quick_int_allocs, quick_neg_int_allocs;
 static PyObject *
 get_small_int(sdigit ival)
 {
+    // 小整数为不可变对象
     PyObject *v;
     assert(-NSMALLNEGINTS <= ival && ival < NSMALLPOSINTS);
     v = (PyObject *)&small_ints[ival + NSMALLNEGINTS];
@@ -193,6 +197,10 @@ _PyLong_New(Py_ssize_t size)
                         "too many digits in integer");
         return NULL;
     }
+
+    /*
+        所需bytes数计算：到PyLongObject->ob_digit前的bytes数 + ob_digit[]占用bytes数
+    */
     result = PyObject_MALLOC(offsetof(PyLongObject, ob_digit) +
                              size*sizeof(digit));
     if (!result) {
@@ -231,10 +239,10 @@ PyObject *
 PyLong_FromLong(long ival)
 {
     PyLongObject *v;
-    unsigned long abs_ival;
+    unsigned long abs_ival;     // 表示整型的数值位，不包括符号位
     unsigned long t;  /* unsigned so >> doesn't propagate sign bit */
     int ndigits = 0;
-    int sign;
+    int sign;       // 表示正负，1为正，-1为负
 
     CHECK_SMALL_INT(ival);
 
@@ -250,6 +258,9 @@ PyLong_FromLong(long ival)
     }
 
     /* Fast path for single-digit ints */
+    /* 
+        在区间 [-32768 , 32768) 的数字，即16bytes大小的short int
+    */
     if (!(abs_ival >> PyLong_SHIFT)) {
         v = _PyLong_New(1);
         if (v) {
