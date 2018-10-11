@@ -273,6 +273,9 @@ PyLong_FromLong(long ival)
 
 #if PyLong_SHIFT==15
     /* 2 digits */
+    /*
+        在区间 [-21 4748 3648 , 21 4748 3648) 的数字，即32bytes大小的int
+    */
     if (!(abs_ival >> 2*PyLong_SHIFT)) {
         v = _PyLong_New(2);
         if (v) {

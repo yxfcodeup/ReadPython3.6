@@ -121,10 +121,10 @@ typedef struct _object {
 } PyObject;
 */
 
-/* 可变对象 */
+/* 变长对象 */
 typedef struct {
     PyObject ob_base;
-    Py_ssize_t ob_size; /* Number of items in variable part */
+    Py_ssize_t ob_size; /* Number of items in variable part */  // 元素个数，非字节数
 } PyVarObject;
 
 #define Py_REFCNT(ob)           (((PyObject*)(ob))->ob_refcnt)
@@ -250,6 +250,9 @@ typedef int (*visitproc)(PyObject *, void *);
 typedef int (*traverseproc)(PyObject *, visitproc, void *);
 
 #ifndef Py_LIMITED_API
+/*
+    抽象的数值运算函数指针
+*/
 typedef struct {
     /* Number implementations must check *both*
        arguments for proper type and implement the necessary conversions
@@ -297,6 +300,9 @@ typedef struct {
     binaryfunc nb_inplace_matrix_multiply;
 } PyNumberMethods;
 
+/*
+    抽象的序列类型函数指针
+*/
 typedef struct {
     lenfunc sq_length;
     binaryfunc sq_concat;
@@ -311,18 +317,27 @@ typedef struct {
     ssizeargfunc sq_inplace_repeat;
 } PySequenceMethods;
 
+/*
+    抽象的字典结构函数指针
+*/
 typedef struct {
     lenfunc mp_length;
     binaryfunc mp_subscript;
     objobjargproc mp_ass_subscript;
 } PyMappingMethods;
 
+/*
+    抽象的异步函数指针
+*/
 typedef struct {
     unaryfunc am_await;
     unaryfunc am_aiter;
     unaryfunc am_anext;
 } PyAsyncMethods;
 
+/*
+    抽象的缓存类函数指针
+*/
 typedef struct {
      getbufferproc bf_getbuffer;
      releasebufferproc bf_releasebuffer;
@@ -359,52 +374,62 @@ typedef struct _typeobject PyTypeObject; /* opaque */
 typedef struct _typeobject {
     PyObject_VAR_HEAD
     const char *tp_name; /* For printing, in format "<module>.<name>" */
-    Py_ssize_t tp_basicsize, tp_itemsize; /* For allocation */
+    Py_ssize_t tp_basicsize, tp_itemsize; /* For allocation */ // 不可变长度的tp_itemsize为0，可变长度的非0
 
     /* Methods to implement standard operations */
 
-    destructor tp_dealloc;
-    printfunc tp_print;
-    getattrfunc tp_getattr;
+    destructor tp_dealloc;      // 释放对象
+    printfunc tp_print;         // 打印
+    getattrfunc tp_getattr;    
     setattrfunc tp_setattr;
+
+    /*
+        在Python2中为: cmpfunc tp_compare ;
+        在Python3早期版本中: void *tp_reserved ;
+    */
     PyAsyncMethods *tp_as_async; /* formerly known as tp_compare (Python 2)
                                     or tp_reserved (Python 3) */
-    reprfunc tp_repr;
+    reprfunc tp_repr;           // repr()内置函数
 
     /* Method suites for standard classes */
-
-    PyNumberMethods *tp_as_number;
+    /* 三大基础数据结构的方法类指针 */
+    PyNumberMethods *tp_as_number;  
     PySequenceMethods *tp_as_sequence;
     PyMappingMethods *tp_as_mapping;
 
     /* More standard operations (here for binary compatibility) */
-
-    hashfunc tp_hash;
-    ternaryfunc tp_call;
-    reprfunc tp_str;
-    getattrofunc tp_getattro;
-    setattrofunc tp_setattro;
+    /* 一些标准函数 */
+    hashfunc tp_hash;           // 哈希
+    ternaryfunc tp_call;        // 调用
+    reprfunc tp_str;            // 转化为str
+    getattrofunc tp_getattro;   // 获取属性
+    setattrofunc tp_setattro;   // 设置属性
 
     /* Functions to access object as input/output buffer */
     PyBufferProcs *tp_as_buffer;
 
     /* Flags to define presence of optional/expanded features */
+    /* 此处是不明？ */
     unsigned long tp_flags;
 
     const char *tp_doc; /* Documentation string */
 
     /* Assigned meaning in release 2.0 */
     /* call function for all accessible objects */
+    /* 用于GC的遍历函数 */
     traverseproc tp_traverse;
 
     /* delete references to contained objects */
+    /* 用于GC的清理函数 */
     inquiry tp_clear;
 
     /* Assigned meaning in release 2.1 */
     /* rich comparisons */
+    /* 用于比较大小的函数指针 */
     richcmpfunc tp_richcompare;
 
     /* weak reference enabler */
+    /* 弱引用 */
     Py_ssize_t tp_weaklistoffset;
 
     /* Iterators */
@@ -412,10 +437,11 @@ typedef struct _typeobject {
     iternextfunc tp_iternext;
 
     /* Attribute descriptor and subclassing stuff */
-    struct PyMethodDef *tp_methods;
-    struct PyMemberDef *tp_members;
-    struct PyGetSetDef *tp_getset;
-    struct _typeobject *tp_base;
+    /* 类型对象的各种属性信息 */
+    struct PyMethodDef *tp_methods;     // 拥有的成员函数
+    struct PyMemberDef *tp_members;     // 拥有的成员变量
+    struct PyGetSetDef *tp_getset;      // get类和set类
+    struct _typeobject *tp_base;        // 类型对象的基类
     PyObject *tp_dict;
     descrgetfunc tp_descr_get;
     descrsetfunc tp_descr_set;
