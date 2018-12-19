@@ -23,6 +23,9 @@ typedef struct _is PyInterpreterState;
 #else
 typedef PyObject* (*_PyFrameEvalFunction)(struct _frame *, int);
 
+/*
+ * Python½âÊÍÆ÷×´Ì¬
+ */
 typedef struct _is {
 
     struct _is *next;

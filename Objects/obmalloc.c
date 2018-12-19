@@ -353,9 +353,15 @@ PyMem_SetAllocator(PyMemAllocatorDomain domain, PyMemAllocatorEx *allocator)
 {
     switch(domain)
     {
-    case PYMEM_DOMAIN_RAW: _PyMem_Raw = *allocator; break;
-    case PYMEM_DOMAIN_MEM: _PyMem = *allocator; break;
-    case PYMEM_DOMAIN_OBJ: _PyObject = *allocator; break;
+    case PYMEM_DOMAIN_RAW: 
+        _PyMem_Raw = *allocator; 
+        break;
+    case PYMEM_DOMAIN_MEM: 
+        _PyMem = *allocator; 
+        break;
+    case PYMEM_DOMAIN_OBJ: 
+        _PyObject = *allocator; 
+        break;
     /* ignore unknown domain */
     }
 }

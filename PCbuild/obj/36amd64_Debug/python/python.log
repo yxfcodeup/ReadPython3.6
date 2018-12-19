@@ -1,2 +1,2 @@
 ﻿  python.c
-LINK : fatal error LNK1104: 无法打开文件“F:\Workspace\CodeReading\Python-3.6.6\PCBuild\amd64\python36_d.lib”
+LINK : fatal error LNK1104: 无法打开文件“F:\gitCloneRepos\yxfcodeup\ReadPython3.6\PCBuild\amd64\python36_d.lib”

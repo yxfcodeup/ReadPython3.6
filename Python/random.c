@@ -538,6 +538,9 @@ _PyOS_URandomNonblock(void *buffer, Py_ssize_t size)
     return pyurandom(buffer, size, 0, 1);
 }
 
+/*
+ * Ëæ»ú³õÊ¼»¯
+ */
 void
 _PyRandom_Init(void)
 {

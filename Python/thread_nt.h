@@ -239,6 +239,9 @@ PyThread_exit_thread(void)
  * I [Dag] tried to implement it with mutex but I could find a way to
  * tell whether a thread already own the lock or not.
  */
+/*
+ * 使用信号量实现线程同步机制
+ */
 PyThread_type_lock
 PyThread_allocate_lock(void)
 {

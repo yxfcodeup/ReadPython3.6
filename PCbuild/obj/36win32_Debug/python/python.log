@@ -1,1 +1,11 @@
-﻿
+﻿  python.c
+  python.vcxproj -> F:\gitCloneRepos\yxfcodeup\ReadPython3.6\PCBuild\win32\python_d.exe
+  Traceback (most recent call last):
+    File "F:\gitCloneRepos\yxfcodeup\ReadPython3.6\PC\validate_ucrtbase.py", line 8, in <module>
+      from ctypes import (c_buffer, POINTER, byref, create_unicode_buffer,
+    File "F:\gitCloneRepos\yxfcodeup\ReadPython3.6\Lib\ctypes\__init__.py", line 7, in <module>
+      from _ctypes import Union, Structure, Array
+  ModuleNotFoundError: No module named '_ctypes'
+F:\gitCloneRepos\yxfcodeup\ReadPython3.6\PCbuild\python.vcxproj(93,5): warning MSB3073: 命令“setlocal
+F:\gitCloneRepos\yxfcodeup\ReadPython3.6\PCbuild\python.vcxproj(93,5): warning MSB3073: set PYTHONPATH=F:\gitCloneRepos\yxfcodeup\ReadPython3.6\Lib
+F:\gitCloneRepos\yxfcodeup\ReadPython3.6\PCbuild\python.vcxproj(93,5): warning MSB3073: "F:\gitCloneRepos\yxfcodeup\ReadPython3.6\PCBuild\win32\python_d.exe" "F:\gitCloneRepos\yxfcodeup\ReadPython3.6\PC\validate_ucrtbase.py" ucrtbased”已退出，代码为 1。
